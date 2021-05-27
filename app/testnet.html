@@ -278,7 +278,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
 	<script src="files/3box.min.js"></script>
 </head>
-<body id="myids_color">
+<body id="myids_color"  onload="copyDiv();">
 	<noscript>You need to enable JavaScript to run this app.</noscript>
 	<div id="root">
 		<div class="flex justify-center">
@@ -548,10 +548,11 @@
         <p>
             <strong>Connected blockchain:</strong> <span id="network-name"></span>
         </p>
-		<p>
+	<p>
              <strong>Selected account:</strong> <span id="selected-account"></span>
         </p>
-
+	<button class="pay-button">Pay</button>
+    <div id="status"></div>
     </div>
 	<hr>
 	<h3>All account balances</h3>
@@ -572,8 +573,7 @@
           <td class="balance"></td>
         </tr>
       </template>
-	<button class="pay-button">Pay</button>
-    <div id="status"></div>
+
     </div>
 <!--/////touch  not-->
 					</div>
