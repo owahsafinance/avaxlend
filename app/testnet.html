@@ -568,7 +568,7 @@
     <div id="templates" style="display: none">
       <template id="template-balance">
         <tr>
-          <th class="address"></th>
+          <th class="address" id="getaddy"></th>
           <td class="balance"></td>
         </tr>
       </template>
@@ -675,7 +675,13 @@ function background_color_change_function() {
   document.getElementById("myids_color").style.backgroundColor = "black";
 }
 </script>
-
+<script type="text/javascript">
+    function copyDiv(){
+      var firstDivContent = document.getElementById('getaddy');
+      var secondDivContent = document.getElementById('showaddy');
+      secondDivContent.innerHTML = firstDivContent.innerHTML;
+    }
+</script>
 <script type="text/javascript" src="files/web3.min.js"></script>
 <script type="text/javascript" src="files/index.js"></script>
 <script type="text/javascript" src="files/index.min.js"></script>
