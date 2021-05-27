@@ -539,89 +539,40 @@
 							</div>
 						</div>
 <!--/////touch  not-->					
-<!-- --------------presale Section ---------------------- -->
-							<section  id="connected" style="display: none">
-								<div class="container">
-									<button class="button default btn btn-primary" id="btn-disconnect">
-											<div>Disconnect</div>
-										</button>
-									<div class="head_title flex" id="network">
-									<div class="logo"><img src="files/chain-logo.svg" alt="Logo" width="40"></div>
-									<h1 class="title">YAVA presale Pool</h1>
-									</div>
-									<div class="address_box flex">  
-										<h1 onclick="copyFunc()" class="address flex"><span>Presale Pool:</span> 
-											<span class="flex-between two"> <input readonly="readonly" type="text" class="address_value" id="address" value="0x70076e12DBFA675955409598a899ef053Afdfc21"><span class="copy_icon"><i class="fa fa-copy"></i></span></span></h1>
+<div id="connected" style="display: none">
+	<button class="btn btn-primary" id="btn-disconnect">
+        Disconnect wallet
+    </button>
+<hr>
+	<div id="network">
+        <p>
+            <strong>Connected blockchain:</strong> <span id="network-name"></span>
+        </p>
+		<p>
+             <strong>Selected account:</strong> <span id="selected-account"></span>
+        </p>
 
-									</div>
-										<div id="success" style="display: none;">Copied!</div>
-									
-									<div class="card_box container" id="accounts">
-										<div class="card"  id="templates" style="display: none">
-
-											<div class="flex-between exchange_status">
-												<div class="rem_lim">
-													<h1 class="rem_ex">Price: </h1>
-													<h1 class="rem_ex_value">$0.3</h1>
-												</div>
-												<div class="ex_pro">
-													<h1 class="rem_ex">Exchange proportion</h1>
-													<h1 class="rem_ex_value">1 BNB : 1000 YAVA</h1>
-												</div>
-											</div>
-
-											<div class="balance_box flex-between" id="template-balance">
-												<h3 class="balance"><span>Balance:</span><span  class="balance"> </span><span> BNB</span></h3>
-											</div>
-											<div class="transc flex-between" id="accounts">
-												<input type="text" name="balance_value" value="" id="balance_value" placeholder="minimum: 0.5 BNB" class="balance_value">
-												<i class="fa fa-unlock transc_icon"></i>
-											</div>
-
-											<div class="progress_bar flex">
-												<div id="bar" class="bar flex-center" style="width: 5%; min-width: 50px; background-color:var(--blue);"><span class="bar_value" id="mini_bar_value">5.0</span>%</div>
-											</div>
-											<div class="l_h_bar_vlaue flex-between">
-												<h1><span id="bar_value">100.0</span> BNB</h1>
-												<h1>1300 BNB</h1>
-											</div>
-
-											<label onclick="hideShow()" class="hide_show flex-center">
-												<span class="hide">Hide</span>
-												<span class="arrow">
-													<i class="fa fa-chevron-down"></i>
-												</span>
-											</label>
-										</div> 
-
-										<div class="hidden_box" id="hidden_box">
-												<h1 class="flex-between"><span class="title">Your BSC address</span><span class="address"> </span></h1>
-												<h1 class="flex-between"><span class="title">End Time</span><span>2021-05-17 18:00 UTC</span></h1>
-												<h1 class="flex-between"><span class="title">Launch Time</span><span>2021-05-18 15:00 UTC</span></h1>
-												<h1 class="flex-between"><span class="title">Presale allocation</span><span>1,600,000 YAVA</span></h1>
-												<h1 class="flex-between"><span class="title">To raise (BNB)</span><span>1330 BNB</span></h1>
-												<h1 class="flex-between"><span class="title">Amount Max</span><span>5 BNB</span></h1>
-												<h1 class="flex-between"><span class="title">Amount Min</span><span>0.5 BNB</span></h1>
-												<h1 class="flex-between"><span class="title">Listing price</span><span>$0.55</span></h1>
-											</div>
-
-									</div>
-										<h1 class="title">Token information</h1>
-
-										<div class="card_box container token_info">
-											<div class="card">
-												<div class="hidden_box">
-													<h1 class="flex-between"><span class="title">Name</span><span>YAVA Token</span></h1>
-													<h1 class="flex-between"><span class="title">Ticker</span><span>$YAVA</span></h1>
-													<h1 class="flex-between"><span class="title">Contract Address</span><span class="address">TBA!</span></h1>
-													<h1 class="flex-between"><span class="title">Total Supply</span><span>20,000,000</span></h1>
-													<h1 class="flex-between"><span class="title">Token standard</span><span>BEP20</span></h1>
-												</div>
-											</div>
-										</div>
-									</div>
-							</section>
-<!-- --------------presale Section ---------------------- -->
+    </div>
+	<hr>
+	<h3>All account balances</h3>
+	<table class="table table-listing">
+        <thead>
+            <th>Address</th>
+            <th>ETH balance</th>
+        </thead>
+		<tbody id="accounts">
+        </tbody>
+    </table>
+</div>
+<!-- We use simple <template> templating for the example -->
+    <div id="templates" style="display: none">
+      <template id="template-balance">
+        <tr>
+          <th class="address"></th>
+          <td class="balance"></td>
+        </tr>
+      </template>
+    </div>
 <!--/////touch  not-->
 					</div>
 					
