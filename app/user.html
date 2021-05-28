@@ -501,7 +501,7 @@
 										<div class="logo">
 											<img src="files/chain-logo.svg" alt="Logo" width="140">
 										</div>
-										<h1 class="title">YAVA presale Pool</h1>
+										<h1 class="title">YAVAXLend presale Pool</h1>
 									</div>
 									<div class="address_box flex">  
 										<h1 onclick="copyFunc()" class="address flex"><span>Presale Pool:</span> 
@@ -520,12 +520,12 @@
 												</div>
 												<div class="ex_pro">
 													<h1 class="rem_ex">Exchange proportion</h1>
-													<h1 class="rem_ex_value">1 BNB : 1000 YAVA</h1>
+													<h1 class="rem_ex_value">1 BNB : 1162 YAVA</h1>
 												</div>
 											</div>
 
 											<div class="balance_box flex-between">
-												<h3 class="balance"><span>Balance:</span><span>0 </span><span> BNB</span></h3>
+												<h3 class="balance"><span>Your Allocation:</span><span>0 </span><span>YAVA  <input name="claim" type="button" value="claim"/></span></h3>
 											</div>
 											<div class="transc flex-between">
 												<input type="text" name="balance_value" id="amtCrypto" value="" placeholder="minimum: 0.5 BNB" class="balance_value">
@@ -566,7 +566,7 @@
 										<div class="card_box container token_info">
 											<div class="card">
 												<div class="hidden_box">
-													<h1 class="flex-between"><span class="title">Name</span><span>YAVA Token</span></h1>
+													<h1 class="flex-between"><span class="title">Name</span><span>YAVAXLend Token</span></h1>
 													<h1 class="flex-between"><span class="title">Ticker</span><span>$YAVA</span></h1>
 													<h1 class="flex-between"><span class="title">Contract Address</span><span class="address">TBA!</span></h1>
 													<h1 class="flex-between"><span class="title">Total Supply</span><span>20,000,000</span></h1>
@@ -679,5 +679,12 @@
 		</section>
 	</div>
 <script type="text/javascript" src="files/react.js"></script>
+<script>
+  var pressedButton = document.getElementsByName("claim")[0];
+ 
+  pressedButton.addEventListener("click", function (event) {
+    alert("Sorry, your wallet address has not participated in the pool yet")
+  })
+</script>
 </body>
 </html>
