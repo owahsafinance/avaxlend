@@ -113,4 +113,44 @@ async function fetchAccountData() {
     clone.querySelector(".balance").textContent = humanFriendlyBalance;
     accountContainer.appendChild(clone);
   });
+   // Display fully loaded UI for wallet data
+  document.querySelector("#prepare").style.display = "none";
+  document.querySelector("#connected").style.display = "block";
 }
+
+/**
+ * Fetch account data for UI when
+ * - User switches accounts in wallet
+ * - User switches networks in wallet
+ * - User connects wallet initially
+ */
+async function refreshAccountData() {
+
+  // If any current data is displayed when
+  // the user is switching acounts in the wallet
+  // immediate hide this data
+  document.querySelector("#connected").style.display = "none";
+  document.querySelector("#prepare").style.display = "block";
+
+  // Disable button while UI is loading.
+  // fetchAccountData() will take a while as it communicates
+  // with Ethereum node via JSON-RPC and loads chain data
+  // over an API call.
+  document.querySelector("#btn-connect").setAttribute("disabled", "disabled")
+  await fetchAccountData(provider);
+  document.querySelector("#btn-connect").removeAttribute("disabled")
+}
+
+
+/**
+ * Connect wallet button pressed.
+ */
+async function onConnect() {
+
+  console.log("Opening a dialog", web3Modal);
+  try {
+    provider = await web3Modal.connect();
+  } catch(e) {
+    console.log("Could not get a wallet connection", e);
+    return;
+  }
